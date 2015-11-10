@@ -1,0 +1,50 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+
+#Tools:
+#~~~~
+#get all tools
+GET    		/tools			    controllers.Tools.index()
+
+#Create a new tool
+GET 		/tools/new		    controllers.Tools.form()
+POST		/tools			    controllers.Tools.create()
+
+#Delete a tool
+DELETE 	    /tools/:id		    controllers.Tools.delete(id:Long)
+
+#Get all info about specific tool/show
+GET		    /tools/:id		    controllers.Tools.show(id:Long)
+
+#edit a tool
+GET		    /tools/:id/edit		controllers.Tools.edit(id:Long)
+PUT		    /tools/:id		    controllers.Tools.update(id:Long)
+
+#Users
+#~~~~
+#get all users
+GET    		/users			    controllers.Users.index()
+
+#Create a new user
+GET 		/users/new		    controllers.Users.form()
+POST		/users			    controllers.Users.create()
+
+#Delete a user
+DELETE 	    /users/:id		    controllers.Users.delete(id:Long)
+
+#Get user profile
+GET		    /users/:id		    controllers.Users.show(id:Long)
+
+#edit user info
+GET		    /users/:id/edit		controllers.Users.edit(id:Long)
+#update a record about a user
+PUT		/users/:id		controllers.Users.update(id:Long)
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
