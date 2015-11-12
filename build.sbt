@@ -1,4 +1,4 @@
-name := """CST"""
+name := """CTS"""
 
 version := "1.0-SNAPSHOT"
 
