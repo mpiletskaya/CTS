@@ -8,8 +8,9 @@
         <h2>All Available Tools</h2>
         <ul>
             @for(t <- tools){
-                <li>@t.getName()</li>
+                <a href = "@routes.Tool.show(t.getId())"><li>@t.getName()</li></a>
             }
         </ul>
     }
+    <button> <a href="@routes.Tools.form()"> Post a new Tool</a> </button>
 }

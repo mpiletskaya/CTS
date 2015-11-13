@@ -1,6 +1,7 @@
 package controllers;
 
 import models.Tool;
+import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
 
@@ -16,10 +17,13 @@ public class Tools extends Controller{
     }
 
     public Result form(){
-        return ok(views.html.index.render("Create a new tool"));
+        return ok(views.html.Tool.form.render("Create a new tool"));
     }
 
     public Result create(){
+        Tool tool = Form.form(Tool.class).bindFromRequest().get();
+        tool.save();
+        flash("success", "Saved new Genre: " + tool.getName());
         //Create a new tool record in the db and redirect
         return redirect(routes.Tools.index());
     }

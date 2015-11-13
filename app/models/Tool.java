@@ -23,6 +23,9 @@ public class Tool extends Model {
 
     public static Finder<Long, Tool> find = new Finder<Long, Tool>(Tool.class);
 
+    public Long getId() {
+        return id;
+    }
     public String getName() {
         return name;
     }
