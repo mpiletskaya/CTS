@@ -2,3 +2,14 @@ body {
     background-image: url("../images/light_wood_texture.jpg");
     background-repeat: repeat;
 }
+header,footer{
+    margin: auto;
+    width: 90%;
+     text-align:center;
+}
+#wrapper-main{
+	margin: auto;
+	width: 80%;
+	text-align:center;
+}
+
