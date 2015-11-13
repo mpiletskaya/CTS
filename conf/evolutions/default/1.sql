@@ -3,12 +3,6 @@
 
 # --- !Ups
 
-# ---create table tool)
-#---;
-
-
-
-
 # --- !Downs
 
 SET REFERENTIAL_INTEGRITY FALSE;
