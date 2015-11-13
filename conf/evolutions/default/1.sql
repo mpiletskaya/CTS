@@ -19,7 +19,7 @@ create table tool_type (
 create table user (
   id                        bigint not null,
   username                  varchar(255),
-  password                  varchar(255),
+  password_hash             varchar(255),
   email                     varchar(255),
   constraint pk_user primary key (id))
 ;
