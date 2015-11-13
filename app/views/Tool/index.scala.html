@@ -1,0 +1,15 @@
+@(tools: List[Tool])
+
+@main("CTS") {
+
+    @if(tools.isEmpty()){
+        <h2>Sorry, there are no tools to display</h2>
+    }else{
+        <h2>All Available Tools</h2>
+        <ul>
+            @for(t <- tools){
+                <li>@t.getName()</li>
+            }
+        </ul>
+    }
+}

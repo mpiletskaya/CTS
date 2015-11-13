@@ -1,14 +1,18 @@
 package controllers;
 
+import models.Tool;
 import play.mvc.Controller;
 import play.mvc.Result;
+
+import java.util.List;
 
 /**
  * Created by Maria on 11/10/15.
  */
 public class Tools extends Controller{
     public Result index(){
-        return ok(views.html.index.render("Ready!"));
+        List<Tool> tools = Tool.find.all();
+        return ok(views.html.Tool.index.render(tools));
     }
 
     public Result form(){
@@ -16,7 +20,8 @@ public class Tools extends Controller{
     }
 
     public Result create(){
-        return ok(views.html.index.render("Create a new tool record in the db and redirect"));
+        //Create a new tool record in the db and redirect
+        return redirect(routes.Tools.index());
     }
 
     public Result delete(Long id){
