@@ -32,7 +32,8 @@ public class Tools extends Controller{
         return ok(views.html.index.render("Delete a tool and redirect"));
     }
     public Result show(Long id){
-        return ok(views.html.index.render("Show a tool"));
+        Tool t = Tool.find.byId(id);
+        return ok(views.html.Tool.show.render(t));
     }
     public Result edit(Long id){
         return ok(views.html.index.render("Edit a tool"));
