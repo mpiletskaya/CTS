@@ -3,11 +3,12 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index()
+# GET     /                           controllers.Application.index()
 
 #Tools:
 #~~~~
 #get all tools
+GET         /                   controllers.Tools.index()
 GET    		/tools			    controllers.Tools.index()
 
 #Create a new tool
