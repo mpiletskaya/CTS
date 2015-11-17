@@ -5,11 +5,13 @@ import play.data.validation.Constraints;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * Created by Maria on 11/13/15.
  */
 
+@Table(name="users")
 @Entity
 public class User extends Model{
 
