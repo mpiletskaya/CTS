@@ -17,13 +17,13 @@ import javax.persistence.Table;
 public class User extends Model{
 
     @Id
-    private Long id;
+    public Long id;
 
-    private String username;
-    private String passwordHash;
+    public String username;
+    public String passwordHash;
 
     @Constraints.Required
-    private String email;
+    public String email;
     //private String role; general user or admin;
 
     public static Finder<Long, User> find = new Finder<Long, User>(User.class);
