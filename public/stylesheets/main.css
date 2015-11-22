@@ -12,4 +12,65 @@ header,footer{
 	width: 80%;
 	text-align:center;
 }
+#form-wrapper{
+	width:60%;
+	padding:20px;
+	margin: auto;
+}
 
+.form-group{
+	text-align:left;
+}
+
+.form-control {
+  font-size: 14px;
+  color: #555;
+  border: 1px solid #e74c3c;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+ }
+
+#login{
+}
+
+#register{
+	display:none;
+}
+#toregister:target ~ #form-wrapper #register,
+#tologin:target ~ #form-wrapper #login{
+	-webkit-animation-name: fadeInLeft;
+	animation-name: fadeInLeft;
+	-webkit-animation-duration: .5s;
+	animation-duration: .5s;
+	display:block;
+}
+@keyframes fadeInLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-20px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+#toregister:target ~ #form-wrapper #login,
+#tologin:target ~ #form-wrapper #register{
+	-webkit-animation-name: fadeOutLeft;
+	animation-name: fadeOutLeft;
+	display:none;
+}
+
+@keyframes fadeOutLeft {
+	0% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateX(-20px);
+	}
+}

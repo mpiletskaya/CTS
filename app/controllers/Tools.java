@@ -23,7 +23,7 @@ public class Tools extends Controller{
     public Result create(){
         Tool tool = Form.form(Tool.class).bindFromRequest().get();
         tool.save();
-        flash("success", "Saved new Genre: " + tool.getName());
+        flash("success", "Saved new Genre: " + tool.name);
         //Create a new tool record in the db and redirect
         return redirect(routes.Tools.index());
     }

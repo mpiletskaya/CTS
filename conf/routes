@@ -32,7 +32,9 @@ GET    		/users			    controllers.Users.index()
 
 #Create a new user
 GET 		/users/new		    controllers.Users.form()
-POST		/users			    controllers.Users.create()
+POST		/users/signup	    controllers.Users.signup()
+POST        /users/login        controllers.Users.login()
+GET         /users/logout        controllers.Users.logout()
 
 #Delete a user
 DELETE 	    /users/:id		    controllers.Users.delete(id:Long)
