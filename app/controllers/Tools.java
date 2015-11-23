@@ -4,6 +4,7 @@ import models.Tool;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
+import play.mvc.Security;
 
 import java.util.List;
 
@@ -20,6 +21,7 @@ public class Tools extends Controller{
         return ok(views.html.Tool.form.render("Create a new tool"));
     }
 
+    @Security.Authenticated(UserAuth.class)
     public Result create(){
         Tool tool = Form.form(Tool.class).bindFromRequest().get();
         tool.save();

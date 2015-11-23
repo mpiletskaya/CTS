@@ -55,7 +55,7 @@ public class Users extends Controller {
     }
     public Result logout(){
         session().remove("user_id");
-        return redirect(routes.Users.index());
+        return redirect(routes.Tools.index());
     }
     public Result delete(Long id){
         return ok(views.html.index.render("Delete a user and redirect"));
