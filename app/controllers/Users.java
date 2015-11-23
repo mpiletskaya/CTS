@@ -12,7 +12,7 @@ import play.mvc.Result;
 public class Users extends Controller {
 
     public Result index(){
-        return ok(views.html.index.render("Get all users"));
+        return ok(views.html.index.render(""));
     }
 
     public Result form(){
@@ -40,10 +40,22 @@ public class Users extends Controller {
     }
 
     public Result login(){
-        return ok(views.html.User.form.render("Login"));
+        DynamicForm dynamicForm = Form.form().bindFromRequest();
+        String email = dynamicForm.data().get("email");
+        String password = dynamicForm.data().get("pwd");
+
+        User user = User.find.where().eq("email", email).findUnique();
+        if(user != null && user.authenticate(password)) {
+            session("user_id", user.id.toString());
+            flash("success", "Welcome back " + user.username);
+        } else {
+            flash("error", "Invalid login. Check your username and password.");
+        }
+        return redirect(routes.Users.index());
     }
     public Result logout(){
-        return ok(views.html.User.form.render("Logout"));
+        session().remove("user_id");
+        return redirect(routes.Users.index());
     }
     public Result delete(Long id){
         return ok(views.html.index.render("Delete a user and redirect"));
