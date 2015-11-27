@@ -11,7 +11,7 @@ import javax.persistence.Id;
  */
 
 @Entity
-public class ToolType extends Model {
+public class ToolTypes extends Model {
 
     @Id
     private Long id;
