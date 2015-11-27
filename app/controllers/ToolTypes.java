@@ -12,7 +12,7 @@ public class ToolTypes extends Controller {
     }
 
     public Result create() {
-        return redirect(routes.ToolType.index());
+        return redirect(routes.ToolTypes.index());
     }
 
 }
