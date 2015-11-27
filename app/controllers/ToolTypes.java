@@ -11,12 +11,6 @@ public class ToolTypes extends Controller {
 
      // List all of the ToolType
     public Result index() {
-        List<Tooltype> tooltypes = Tooltype.find.all();
+        List<Tooltype> tooltypes = Tooltype.findall();
         return ok(views.html.tooltypes.index.render(tooltypes));
     }
-
-    public Result create() {
-        return redirect(routes.ToolTypes.index());
-    }
-
-}
