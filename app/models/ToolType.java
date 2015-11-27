@@ -1,6 +1,7 @@
 package models;
 
 import com.avaje.ebean.Model;
+import play.data.validation.Constraints;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -14,5 +15,7 @@ public class ToolType extends Model {
 
     @Id
     private Long id;
-    private String typeName;
+    
+    @Constraints.required
+    public String typeName;
 }
