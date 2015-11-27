@@ -1,0 +1,12 @@
+@(tooltype: Tooltype, tools: List[Tooltypes])
+
+@main("Tooltypes") {
+
+<h1>Tooltype: @tooltype.name</h1>
+
+@if(tools.isEmpty()) {
+<h2>No tools available of this type</h2>
+} else {
+<h2>Tools available!</h2>
+}
+} 
