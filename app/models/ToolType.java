@@ -19,5 +19,8 @@ public class ToolTypes extends Model {
     @Constraints.required
     public String typeName;
     
+    @onetomany
+    public List <Tool> toolList; 
+    
     public static Finder<Long, Tooltype> find = new Finder<Long, Tooltype>(Tooltype.class);
 }
