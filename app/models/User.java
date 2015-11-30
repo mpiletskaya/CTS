@@ -4,6 +4,7 @@ import com.avaje.ebean.Model;
 import org.mindrot.jbcrypt.BCrypt;
 import play.data.validation.Constraints;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -23,6 +24,7 @@ public class User extends Model{
     public String passwordHash;
 
     @Constraints.Required
+    @Column(unique=true)
     public String email;
     //private String role; general user or admin;
 

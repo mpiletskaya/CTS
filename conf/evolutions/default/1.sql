@@ -21,6 +21,7 @@ create table users (
   username                  varchar(255),
   password_hash             varchar(255),
   email                     varchar(255),
+  constraint uq_users_email unique (email),
   constraint pk_users primary key (id))
 ;
 
