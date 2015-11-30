@@ -14,6 +14,7 @@ import java.util.List;
 public class Tools extends Controller{
     public Result index(){
         List<Tool> tools = Tool.find.all();
+       
         return ok(views.html.Tool.index.render(tools));
     }
 
@@ -25,7 +26,7 @@ public class Tools extends Controller{
     public Result create(){
         Tool tool = Form.form(Tool.class).bindFromRequest().get();
         tool.save();
-        flash("success", "Saved new Genre: " + tool.name);
+        flash("success", "Saved new Tool: " + tool.name);
         //Create a new tool record in the db and redirect
         return redirect(routes.Tools.index());
     }
