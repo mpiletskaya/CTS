@@ -20,11 +20,10 @@ public class Tool extends Model {
     public String name;
     @Constraints.Required
     public String description;
-    //private Long owner_id;
     @ManyToOne
     public ToolType type;
     @ManyToOne
-    public User owner_id;
+    public User owner;
 
     public static Finder<Long, Tool> find = new Finder<Long, Tool>(Tool.class);
 

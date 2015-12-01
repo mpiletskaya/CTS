@@ -14,7 +14,7 @@ public class ToolTypes extends Controller {
      // List all of the ToolType
      public Result index() {
         List<ToolType> tooltypes = ToolType.find.all();
-        //TODO you don't have toltypes folder in your views folder
+        //TODO you don't have tooltypes folder in your views folder
         //return ok(views.html.tooltypes.index.render(tooltypes));
          return ok(views.html.index.render("Ok"));
      }

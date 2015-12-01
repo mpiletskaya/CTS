@@ -2,8 +2,10 @@ package controllers;
 
 import models.Tool;
 import models.ToolType;
+import models.User;
 import play.data.Form;
 import play.mvc.Controller;
+import play.mvc.Http;
 import play.mvc.Result;
 import play.mvc.Security;
 
@@ -27,7 +29,23 @@ public class Tools extends Controller{
 
     @Security.Authenticated(UserAuth.class)
     public Result create(){
-        Tool tool = Form.form(Tool.class).bindFromRequest().get();
+        Form<Tool> toolForm = Form.form(Tool.class).bindFromRequest();
+        /*
+        String tooltypeId = toolForm.data().get("tooltype_id");
+
+
+        ToolType t = ToolType.find.byId(Long.parseLong(tooltypeId));
+        if(t == null) {
+            flash("error", "Invalid : " + tooltypeId + " Try again.");
+            return redirect(routes.Tools.index());
+        }
+*/
+//        Http.Context ctx = ctx.session().get("user_id");
+        User user = User.find.byId(Long.parseLong(session().get("user_id")));
+        //TODO handle if user is null
+        Tool tool = toolForm.get();
+//        tool.type = t;
+        tool.owner = user;
         tool.save();
         flash("success", "Saved new Tool: " + tool.name);
         //Create a new tool record in the db and redirect
