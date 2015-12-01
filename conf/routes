@@ -8,8 +8,8 @@
 #ToolTypes:
 #~~~~
 #get all tooltypes
-GET         /                   controllers.ToolTypes.index()
-GET    		/tooltypes			    controllers.ToolTypes.index()
+#GET         /                   controllers.ToolTypes.index()
+#GET    		/tooltypes			    controllers.ToolTypes.index()
 
 #Create a new tooltype
 #GET 		/tooltypes/new		    controllers.ToolTypes.form()
