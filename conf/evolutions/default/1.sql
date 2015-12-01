@@ -7,6 +7,8 @@ create table tool (
   id                        bigserial not null,
   name                      varchar(255),
   description               varchar(255),
+  type_id                   bigint,
+  owner_id_id               bigint,
   constraint pk_tool primary key (id))
 ;
 
@@ -20,11 +22,16 @@ create table users (
   id                        bigserial not null,
   username                  varchar(255),
   password_hash             varchar(255),
+  zipcode                   varchar(255),
   email                     varchar(255),
   constraint uq_users_email unique (email),
   constraint pk_users primary key (id))
 ;
 
+alter table tool add constraint fk_tool_type_1 foreign key (type_id) references tool_type (id);
+create index ix_tool_type_1 on tool (type_id);
+alter table tool add constraint fk_tool_owner_id_2 foreign key (owner_id_id) references users (id);
+create index ix_tool_owner_id_2 on tool (owner_id_id);
 
 
 

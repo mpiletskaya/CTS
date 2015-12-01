@@ -6,6 +6,7 @@ import play.data.validation.Constraints;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 import java.util.List;
 
 /**
@@ -16,20 +17,20 @@ import java.util.List;
 public class ToolType extends Model {
 
     @Id
-    private Long id;
+    public Long id;
     
     @Constraints.Required
     public String typeName;
-    
+
     @OneToMany
     public List<Tool> toolList;
 
-    i
+    @Transient
+    private Boolean availability;
     
     public static Finder<Long, ToolType> find = new Finder<Long, ToolType>(ToolType.class);
 
-
-    public Boolean isTypeAvailable(){
-       return toolList.size() > 0;
+    public Boolean getAvailability() {
+        return toolList.size() > 0;
     }
 }

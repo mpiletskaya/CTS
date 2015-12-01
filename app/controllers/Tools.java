@@ -1,6 +1,7 @@
 package controllers;
 
 import models.Tool;
+import models.ToolType;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -19,7 +20,9 @@ public class Tools extends Controller{
     }
 
     public Result form(){
-        return ok(views.html.Tool.form.render("Create a new tool"));
+        List <ToolType> allTypes = ToolType.find.all();
+
+        return ok(views.html.Tool.form.render(allTypes));
     }
 
     @Security.Authenticated(UserAuth.class)
