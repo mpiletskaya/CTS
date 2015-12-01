@@ -20,6 +20,7 @@ public class Tool extends Model {
     @Constraints.Required
     public String description;
     //private Long owner_id;
+    //attribute for tooltype
 
     public static Finder<Long, Tool> find = new Finder<Long, Tool>(Tool.class);
 
