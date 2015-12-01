@@ -18,7 +18,7 @@ public class Review {
 
     public String timeCreated;
     public Long user_id;
-    public Long
+    public Long tool_id;
 
 
 }

@@ -3,6 +3,15 @@
 
 # --- !Ups
 
+create table review (
+  id                        bigserial not null,
+  body                      varchar(255),
+  time_created              varchar(255),
+  user_id                   bigint,
+  tool_id                   bigint,
+  constraint pk_review primary key (id))
+;
+
 create table tool (
   id                        bigserial not null,
   name                      varchar(255),
@@ -36,6 +45,8 @@ create index ix_tool_owner_2 on tool (owner_id);
 
 
 # --- !Downs
+
+drop table if exists review cascade;
 
 drop table if exists tool cascade;
 
