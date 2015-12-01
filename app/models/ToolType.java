@@ -1,6 +1,7 @@
 package models;
 
 import com.avaje.ebean.Model;
+import play.data.validation.Constraints;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,9 +11,16 @@ import javax.persistence.Id;
  */
 
 @Entity
-public class ToolType extends Model {
+public class ToolTypes extends Model {
 
     @Id
     private Long id;
-    private String typeName;
+    
+    @Constraints.required
+    public String typeName;
+    
+    @onetomany
+    public List <Tool> toolList; 
+    
+    public static Finder<Long, Tooltype> find = new Finder<Long, Tooltype>(Tooltype.class);
 }
