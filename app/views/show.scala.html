@@ -1,8 +1,8 @@
-@(tooltype: Tooltype, tools: List[Tooltypes])
+@(tooltype: ToolType, tools: List[ToolType])
 
 @main("Tooltypes") {
 
-<h1>Tooltype: @tooltype.name</h1>
+<!--<h1>Tooltype: tooltype.name</h1>-->
 
 @if(tools.isEmpty()) {
 <h2>No tools available of this type</h2>

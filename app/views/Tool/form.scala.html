@@ -4,12 +4,18 @@
     <form action="@routes.Tools.create()" method="post">
         <label for="name">Tool:</label>
                 <input type="text" name="name">
-                <br/>
-                <br/>
-                <label for="description">Describe your tool:</label>
+                <br/><br/>
+        <label for="description">Describe your tool:</label>
                 <input type="text" name="description">
-                <br/>
-        <br/>
+                <br/><br/>
+        <select name="categories">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="fiat">Fiat</option>
+                <option value="audi">Audi</option>
+            </select>
+            <br><br>
+
 
         <button class="btn btn-success">Submit</button>
     </form>
