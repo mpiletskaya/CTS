@@ -4,10 +4,8 @@ import com.avaje.ebean.Model;
 import org.mindrot.jbcrypt.BCrypt;
 import play.data.validation.Constraints;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Maria on 11/13/15.
@@ -22,10 +20,14 @@ public class User extends Model{
 
     public String username;
     public String passwordHash;
+    public String zipcode;
 
     @Constraints.Required
     @Column(unique=true)
     public String email;
+
+    @OneToMany
+    public List<Tool> postedTools;
     //private String role; general user or admin;
 
     public static Finder<Long, User> find = new Finder<Long, User>(User.class);

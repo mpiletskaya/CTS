@@ -1,4 +1,4 @@
-@(message:String)
+@(toolTypes: List[ToolType])
 
 @main("Post a new Tool") {
     <form action="@routes.Tools.create()" method="post">
@@ -8,12 +8,13 @@
         <label for="description">Describe your tool:</label>
                 <input type="text" name="description">
                 <br/><br/>
-        <select name="categories">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="fiat">Fiat</option>
-                <option value="audi">Audi</option>
-            </select>
+
+        <label for="tooltype.id">Choose an appropriate category</label>
+        <select name="tooltype" id = "type">
+                @for(t <- toolTypes){
+                    <option value="@t.id">@t.typeName</option>
+                }
+        </select>
             <br><br>
 
 

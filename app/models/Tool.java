@@ -23,6 +23,8 @@ public class Tool extends Model {
     //private Long owner_id;
     @ManyToOne
     public ToolType type;
+    @ManyToOne
+    public User owner_id;
 
     public static Finder<Long, Tool> find = new Finder<Long, Tool>(Tool.class);
 

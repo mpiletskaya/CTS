@@ -17,7 +17,7 @@ import java.util.List;
 public class ToolType extends Model {
 
     @Id
-    private Long id;
+    public Long id;
     
     @Constraints.Required
     public String typeName;
