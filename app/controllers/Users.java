@@ -51,7 +51,7 @@ public class Users extends Controller {
         } else {
             flash("error", "Invalid login. Check your username and password.");
         }
-        return redirect(routes.Users.index());
+        return redirect(routes.Tools.create());
     }
     public Result logout(){
         session().remove("user_id");
