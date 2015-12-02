@@ -1,5 +1,9 @@
-
-
+@(currentuser: User)
+@if(currentuser != null){
+    <h2>Hello,@currentuser.username <a href = "@routes.Users.logout()">Log Out</a></h2>
+}else{
+    <h2><a href = "@routes.Users.form()#toregister">Sign Up</a><a href = "@routes.Users.form()#tologin">Log In</a></h2>
+}
 <h1>******Welcome to CTS project*****</h1>
 
 <br/><br/>

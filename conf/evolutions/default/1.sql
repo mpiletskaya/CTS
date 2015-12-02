@@ -7,8 +7,8 @@ create table review (
   id                        bigserial not null,
   body                      varchar(255),
   time_created              varchar(255),
-  user_id                   bigint,
   tool_id                   bigint,
+  user_id                   bigint,
   constraint pk_review primary key (id))
 ;
 
@@ -37,10 +37,12 @@ create table users (
   constraint pk_users primary key (id))
 ;
 
-alter table tool add constraint fk_tool_type_1 foreign key (type_id) references tool_type (id);
-create index ix_tool_type_1 on tool (type_id);
-alter table tool add constraint fk_tool_owner_2 foreign key (owner_id) references users (id);
-create index ix_tool_owner_2 on tool (owner_id);
+alter table review add constraint fk_review_user_1 foreign key (user_id) references users (id);
+create index ix_review_user_1 on review (user_id);
+alter table tool add constraint fk_tool_type_2 foreign key (type_id) references tool_type (id);
+create index ix_tool_type_2 on tool (type_id);
+alter table tool add constraint fk_tool_owner_3 foreign key (owner_id) references users (id);
+create index ix_tool_owner_3 on tool (owner_id);
 
 
 
