@@ -41,5 +41,19 @@ public class ApplicationTest {
         assertTrue(contentAsString(html).contains("Your new application is ready."));
     }
 
-
+/*
+    @Test
+    public void badRoute() {
+        Result result = routeAndCall(fakeRequest(GET, "/xx/hh"));
+        assertThat(result).isNull();
+    }
+/*
+    @Test
+    public void testUserIsFoundAndPassedToView() {
+        Response response = POST("/user/find?name=mark&dob=18011977")
+        assertThat(renderArgs("user"), is(notNullValue());
+        User user = (User) renderArgs("user");
+        assertThat(user.name, is("mark"));
+    }
+*/
 }

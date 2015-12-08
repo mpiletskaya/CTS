@@ -3,6 +3,7 @@
 <p>Hint for testers: if you want to create a category, login as admin and go to 'My Acount'. email: admin"at"test.test, password: admintest </p>
 <ul class="nav navbar-nav navbar-right">
 
+    <li><a href="@routes.Tools.index()"><span class="glyphicon glyphicon-home"></span> Home</a></li>
     @if(currentuser != null){
         <li><a href="@routes.Users.show(currentuser.id)"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
         <li><a href="@routes.Users.logout()"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>

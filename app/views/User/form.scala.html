@@ -7,7 +7,6 @@
 
 <div id="form-wrapper">
     <div id="login" class="animate left-align">
-        <!-- modify action for login-->
         <form role="form" autocomplete="on" action="@routes.Users.login()"  method="post">
             <h2> Log In </h2>
 
@@ -19,9 +18,6 @@
                 <label for="pawd">Password:</label>
                 <input type="password" class="form-control" id="pawd" name="pwd" placeholder="Enter password" required="required">
             </div>
-            <!--<div class="checkbox">
-                <label><input type="checkbox" id="rememberme"> Remember me</label>
-            </div>-->
             <button type="submit" class="btn btn-danger">Log In</button>
             <p class="change_link">
                 Not a member yet ?
@@ -47,8 +43,8 @@
                 <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Enter password" required="required">
             </div>
             <div class="form-group">
-                <label for="password-confirm">Please confirm your password:</label>
-                <input type="password" class="form-control" id="password-confirm" name="pwd2" placeholder="Enter password" required="required">
+                <label for="pwd2">Please confirm your password:</label>
+                <input type="password" class="form-control" id="pwd2" name="pwd2" placeholder="Enter password" required="required" onkeyup="checkPasswordMatch()">
             </div>
             <button type="submit" name="submit" class="btn btn-danger">Sign Up</button>
             <p class="change_link">

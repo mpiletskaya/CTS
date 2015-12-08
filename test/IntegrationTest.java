@@ -24,5 +24,11 @@ public class IntegrationTest {
             }
         });
     }
-
+/*
+    @Test
+    public void testTheHomePage() {
+        Http.Response response = GET("/tools/");
+        assertStatus(200, response);
+    }
+*/
 }

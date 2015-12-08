@@ -24,26 +24,30 @@ public class Users extends Controller {
         DynamicForm userForm = Form.form().bindFromRequest();
         String username = userForm.data().get("username");
         String password = userForm.data().get("pwd");
-        //TODO deal with password confirmation field
-       // String conf_password = userForm.data().get("pwd2");
-        String email = userForm.data().get("email");
+        String conf_pass = userForm.data().get("pwd2");
+        if (!password.equals(conf_pass)) {
+            flash("error", "Your passwords do not match");
+            return redirect(routes.Users.form());
+        }else {
+            String email = userForm.data().get("email");
 
-        User user = User.createNewUser(username, password, email);
-        if(user == null) {
-            flash("error", "Invalid user");
-            return redirect(routes.Users.index());
+            User user = User.createNewUser(username, password, email);
+            if (user == null) {
+                flash("error", "Invalid user");
+                return redirect(routes.Users.form());
+            }
+            user.save();
+            flash("success", "Welcome new user " + user.username);
+            session("user_id", user.id.toString());
+            return redirect(routes.Tools.index());
         }
-        user.save();
-        flash("success", "Welcome new user " + user.username);
-        session("user_id", user.id.toString());
-        return redirect(routes.Users.index());
+
     }
 
     public Result login(){
         DynamicForm dynamicForm = Form.form().bindFromRequest();
         String email = dynamicForm.data().get("email");
         String password = dynamicForm.data().get("pwd");
-
         User user = User.find.where().eq("email", email).findUnique();
         if(user != null && user.authenticate(password)) {
             session("user_id", user.id.toString());

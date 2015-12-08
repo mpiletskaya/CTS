@@ -22,7 +22,7 @@ POST		/tooltypes			    controllers.ToolTypes.create()
 #Tools:
 #~~~~
 #get all tools
-GET         /                   controllers.Tools.index()
+#GET         /                   controllers.Tools.index()
 GET    		/tools			    controllers.Tools.index()
 
 #Create a new tool
