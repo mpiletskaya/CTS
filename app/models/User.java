@@ -28,7 +28,8 @@ public class User extends Model{
 
     @OneToMany
     public List<Tool> postedTools;
-    //private String role; general user or admin;
+    //general user or admin;
+    public String role;
 
     public static Finder<Long, User> find = new Finder<Long, User>(User.class);
 
@@ -47,9 +48,11 @@ public class User extends Model{
         User user = new User();
         user.email = mail;
         user.passwordHash = pwHash;
+
         if (username != null)
             user.username = username;
-        
+        user.role = username.equals("mpiletskaya") ?  "admin" : "general";
+
         return user;
     }
 

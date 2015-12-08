@@ -61,7 +61,8 @@ public class Users extends Controller {
         return ok(views.html.index.render("Delete a user and redirect"));
     }
     public Result show(Long id){
-        return ok(views.html.index.render("Show a user profile"));
+        User user = User.find.byId(id);
+        return ok(views.html.User.show.render(user));
     }
     public Result edit(Long id){
         return ok(views.html.index.render("Edit a user"));
