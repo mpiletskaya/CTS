@@ -1,21 +1,27 @@
 @(currentuser: User)
-@if(currentuser != null){
-    <h2>Hello,@currentuser.username <a href = "@routes.Users.logout()">Log Out</a></h2>
-}else{
-    <h2><a href = "@routes.Users.form()#toregister">Sign Up</a> <a href = "@routes.Users.form()#tologin">Log In</a></h2>
-}
+
+<ul class="nav navbar-nav navbar-right">
+    @if(currentuser != null){
+        <li><a href="@routes.Users.show(currentuser.id)"><span class="glyphicon glyphicon-user"></span> Hello,@currentuser.username</a></li>
+        <li><a href="@routes.Users.logout()"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+    }else{
+        <li><a href="@routes.Users.form()#toregister"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="@routes.Users.form()#tologin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    }
+</ul>
 <h1>******Welcome to CTS project*****</h1>
 
 <br/><br/>
-<div class="row">
-    <div  >
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for...">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
-      </span>
-        </div><!-- /input-group -->
-    </div><!-- /.col-lg-6 -->
-</div><!-- /.row -->
+
+<!--<div class="row">-->
+    <!--<div  >-->
+        <!--<div class="input-group">-->
+            <!--<input type="text" class="form-control" placeholder="Search for...">-->
+      <!--<span class="input-group-btn">-->
+        <!--<button class="btn btn-default" type="button">Go!</button>-->
+      <!--</span>-->
+        <!--</div>&lt;!&ndash; /input-group &ndash;&gt;-->
+    <!--</div>&lt;!&ndash; /.col-lg-6 &ndash;&gt;-->
+<!--</div>&lt;!&ndash; /.row &ndash;&gt;-->
 <hr>
 <br/>

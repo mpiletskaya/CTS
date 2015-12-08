@@ -7,6 +7,9 @@ header,footer{
     width: 90%;
      text-align:center;
 }
+header li{
+	font-size: 20px;
+}
 #wrapper-main{
 	margin: auto;
 	width: 80%;
