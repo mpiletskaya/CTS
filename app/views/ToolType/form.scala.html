@@ -1,0 +1,22 @@
+@main("Post a new Category") {
+    <form action="@routes.ToolTypes.create()" method="post">
+        <label for="typeName">Tool Category:</label>
+                <input type="text" name="typeName">
+                <br/><br/>
+        <label for="description">Category Description:</label>
+                <input type="text" name="description">
+                <br/><br/>
+        <label for="section">Choose an appropriate section</label>
+        <select name="section" id = "section">
+
+            <option value="Hand Tool">Hand Tool</option>
+            <option value="Power Tool">Power Tool</option>
+            <option value="Other">Other</option>
+        </select>
+        <br><br>
+        <br><br>
+
+
+        <button class="btn btn-success">Create</button>
+    </form>
+}

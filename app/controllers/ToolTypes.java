@@ -3,6 +3,8 @@ package controllers;
 import models.Tool;
 import models.ToolType;
 import models.Tool;
+import models.User;
+import play.data.Form;
 import play.mvc.*;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -30,4 +32,24 @@ public class ToolTypes extends Controller {
         }
     }
 
+    public Result form(){
+        return ok(views.html.ToolType.form.render());
+    }
+
+    @Security.Authenticated(UserAuth.class)
+    public Result create(){
+        Form<ToolType> typeForm = Form.form(ToolType.class).bindFromRequest();
+
+        User user = User.find.byId(Long.parseLong(session().get("user_id")));
+        if (user.role.equals("admin")) {
+            //TODO handle if user is null
+            ToolType type = typeForm.get();
+            type.save();
+            flash("success", "Saved new Tool Category: " + type.typeName);
+        }else{
+            flash("error", "You have no privileges to perform tis action");
+        }
+            //Create a new tool record in the db and redirect
+            return redirect(routes.ToolTypes.index());
+    }
 }

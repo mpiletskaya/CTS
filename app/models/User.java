@@ -51,7 +51,7 @@ public class User extends Model{
 
         if (username != null)
             user.username = username;
-        user.role = username.equals("mpiletskaya") ?  "admin" : "general";
+        user.role = username.equals("admin") ?  "admin" : "general";
 
         return user;
     }

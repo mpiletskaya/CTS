@@ -5,4 +5,7 @@
 <p> User email: @user.email</p>
 <p>User role: @user.role</p>
 
+@if(user.role.equals("admin")){
+    <a href="@routes.ToolTypes.form()"> Create a Category </a></li>
+}
 }

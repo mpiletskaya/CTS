@@ -22,11 +22,16 @@ public class ToolType extends Model {
     @Constraints.Required
     public String typeName;
 
+    public String section;
+    public String description;
+
     @OneToMany
     public List<Tool> toolList;
 
     @Transient
     private Boolean availability;
+
+
     
     public static Finder<Long, ToolType> find = new Finder<Long, ToolType>(ToolType.class);
 
