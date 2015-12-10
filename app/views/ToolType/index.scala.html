@@ -1,0 +1,19 @@
+@(tooltypes: List[ToolType])
+
+@main("ToolTypes") {
+<form action="@routes.ToolTypes.create()" method="post">
+    <input type="text" name="name">
+    <button>Submit</button>
+</form>
+
+@if(tooltypes.isEmpty()) {
+<h2>No other tooltypes available</h2>
+} else {
+<h2>ToolType List</h2>
+<ul>
+    @for(t <- tooltypes) {
+    <li>@t.typeName</li>
+    }
+</ul>
+}
+}

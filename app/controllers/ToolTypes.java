@@ -18,7 +18,7 @@ public class ToolTypes extends Controller {
         List<ToolType> tooltypes = ToolType.find.all();
         //TODO you don't have tooltypes folder in your views folder
         //return ok(views.html.tooltypes.index.render(tooltypes));
-         return ok(views.html.index.render("Ok"));
+         return ok(views.html.ToolType.index.render(tooltypes));
      }
      
      public Result show(Long id) {
@@ -27,8 +27,8 @@ public class ToolTypes extends Controller {
             return notFound("not found");
         } else {
             List <Tool> tools = Tooltype.toolList;
+            return ok(views.html.ToolType.show.render(Tooltype,tools));
            // return ok(views.html.tooltypes.show.render(Tooltype, tools));
-            return ok(views.html.index.render("Ok"));
         }
     }
 
@@ -47,7 +47,7 @@ public class ToolTypes extends Controller {
             type.save();
             flash("success", "Saved new Tool Category: " + type.typeName);
         }else{
-            flash("error", "You have no privileges to perform tis action");
+            flash("error", "You have no privileges to perform this action");
         }
             //Create a new tool record in the db and redirect
             return redirect(routes.ToolTypes.index());
