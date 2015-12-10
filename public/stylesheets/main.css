@@ -1,12 +1,62 @@
 body {
     background-image: url("../images/light_wood_texture.jpg");
     background-repeat: repeat;
+    font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+
 }
+/*****************headers******************/
+h1 {
+	color: #d7ceb2;
+	text-shadow: 3px 3px 0px #2c2e38, 5px 5px 0px #5c5f72;
+	font: 60px 'BazarMedium';
+	letter-spacing: 2px;
+}
+
+h2{
+	font-size: 3em;
+}
+h3{
+	font-size: 1em;
+}
+/*****************border******************/
+hr{
+    border-top: 1px solid #771100;
+}
+/*****************custom******************/
+.toright{
+	margin-left:60px;
+}
+
+/*****************header******************/
+.brand {
+    display: inherit;
+    margin: 0;
+    padding: 40px 0 30px;
+    text-align: center;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, .5);
+    font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 5em;
+    font-weight: 700;
+    line-height: normal;
+    color: 	#220707;
+}
+
 header,footer{
     margin: auto;
     width: 90%;
-     text-align:center;
+    text-align:center;
 }
+/***********panel adjustments************/
+.panel, panel-warning, panel-body{
+	background-color:rgba(0,0,0,0.05);
+}
+.panel-heading{
+	text-align:left;
+	opacity:0.7;
+	font-size: 26px;
+}
+
+
 header li{
 	font-size: 20px;
 }

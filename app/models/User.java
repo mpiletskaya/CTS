@@ -22,6 +22,9 @@ public class User extends Model{
     public String passwordHash;
     public String zipcode;
 
+    public String lname;
+    public String fname;
+
     @Constraints.Required
     @Column(unique=true)
     public String email;

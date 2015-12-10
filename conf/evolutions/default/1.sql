@@ -34,6 +34,8 @@ create table users (
   username                  varchar(255),
   password_hash             varchar(255),
   zipcode                   varchar(255),
+  lname                     varchar(255),
+  fname                     varchar(255),
   email                     varchar(255),
   role                      varchar(255),
   constraint uq_users_email unique (email),

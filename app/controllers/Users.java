@@ -62,14 +62,22 @@ public class Users extends Controller {
         return redirect(routes.Tools.index());
     }
     public Result delete(Long id){
-        return ok(views.html.index.render("Delete a user and redirect"));
+        User user = User.find.byId(id);
+        if (user!=null){
+            session().remove("user_id");
+            user.delete();
+        }else{
+            flash("Error", "Sorry, something went wrong.Please, try again later");
+        }
+        return redirect(routes.Tools.index());
     }
     public Result show(Long id){
         User user = User.find.byId(id);
         return ok(views.html.User.show.render(user));
     }
     public Result edit(Long id){
-        return ok(views.html.index.render("Edit a user"));
+        User user = User.find.byId(id);
+        return ok(views.html.User.edit.render(user));
     }
     public Result update(Long id){
         return ok(views.html.index.render("Update a record about a user and redirect"));
