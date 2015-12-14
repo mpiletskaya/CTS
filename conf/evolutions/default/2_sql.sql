@@ -1,4 +1,4 @@
-# --- Create genres
+# --- Create tool_types
 
 # --- !Ups
 
