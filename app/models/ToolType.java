@@ -22,6 +22,8 @@ public class ToolType extends Model {
     @Constraints.Required
     public String typeName;
 
+    public String typeImageURL;
+
     public String section;
     public String description;
 
@@ -30,12 +32,13 @@ public class ToolType extends Model {
 
     @Transient
     private Boolean availability;
-
-
     
     public static Finder<Long, ToolType> find = new Finder<Long, ToolType>(ToolType.class);
 
     public Boolean getAvailability() {
         return toolList.size() > 0;
     }
+
+
+
 }

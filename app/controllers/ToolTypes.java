@@ -13,6 +13,8 @@ import java.util.List;
 
 public class ToolTypes extends Controller {
 
+    private List<ToolType> localToolType;
+
      // List all of the ToolType
      public Result index() {
         List<ToolType> tooltypes = ToolType.find.all();
@@ -53,3 +55,5 @@ public class ToolTypes extends Controller {
             return redirect(routes.ToolTypes.index());
     }
 }
+
+
