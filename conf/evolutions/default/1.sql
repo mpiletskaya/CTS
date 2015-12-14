@@ -24,6 +24,7 @@ create table tool (
 create table tool_type (
   id                        bigserial not null,
   type_name                 varchar(255),
+  type_image_url            varchar(255),
   section                   varchar(255),
   description               varchar(255),
   constraint pk_tool_type primary key (id))
