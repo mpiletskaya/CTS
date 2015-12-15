@@ -3,18 +3,19 @@
 @main("ToolTypes") {
 
 @if(tooltypes.isEmpty()) {
-<h2>No other tooltypes available</h2>
-<button> <a href="@routes.ToolTypes.form()"> Post a new Tooltype</a> </button>
+    <h2>No other tooltypes available</h2>
 } else {
-<h2>ToolType List</h2>
-<button> <a href="@routes.ToolTypes.form()"> Post a new Tooltype</a> </button>
-<ul
-    @for(t <- tooltypes) {
-    <li>@t.typeName</li>
-    <img src="@t.typeImageURL" alt="@t.typeName" style="width:304px;height:228px;">
-    }
+    <h2>ToolType List</h2>
+    <button> <a href="@routes.ToolTypes.form()"> Post a new Tooltype</a> </button>
+    <ul>
+        @for(t <- tooltypes) {
+        <li>@t.typeName</li>
+        <img src="@t.typeImageURL" alt="@t.typeName" style="width:304px;height:228px;">
+        }
 
-</ul>
+    </ul>
 }
+
+
 }
 

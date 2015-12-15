@@ -87,7 +87,7 @@ header p{
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
  }
-
+/*##############Sign Up/ Log In***********/
 #login{
 }
 
@@ -130,4 +130,19 @@ header p{
 		opacity: 0;
 		transform: translateX(-20px);
 	}
+}
+
+/*Review form*/
+.avaliar{
+    margin-top:5px;
+	background-color:#EDEDED;
+}
+.avaliar textarea{
+	width:100%;
+}
+.stars
+{
+    margin: 20px 0;
+    font-size: 24px;
+    color: #d17581;
 }
