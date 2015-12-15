@@ -51,7 +51,7 @@ POST        /users/login        controllers.Users.login()
 GET         /users/logout        controllers.Users.logout()
 
 #Delete a user
-DELETE 	    /users/:id		    controllers.Users.delete(id:Long)
+GET 	    /users/:id/delete   controllers.Users.delete(id:Long)
 
 #Get user profile
 GET		    /users/:id		    controllers.Users.show(id:Long)
@@ -59,7 +59,7 @@ GET		    /users/:id		    controllers.Users.show(id:Long)
 #edit user info
 GET		    /users/:id/edit		controllers.Users.edit(id:Long)
 #update a record about a user
-PUT		/users/:id		controllers.Users.update(id:Long)
+POST		/users/:id/update		controllers.Users.update(id:Long)
 
 
 # Map static resources from the /public folder to the /assets URL path

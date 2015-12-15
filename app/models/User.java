@@ -22,6 +22,9 @@ public class User extends Model{
     public String passwordHash;
     public String zipcode;
 
+    public String lname;
+    public String fname;
+
     @Constraints.Required
     @Column(unique=true)
     public String email;
@@ -38,7 +41,7 @@ public class User extends Model{
        return BCrypt.checkpw(password, this.passwordHash);
     }
 
-    public static User createNewUser(String username,String password, String mail){
+    public static User createNewUser(String username,String password, String mail,String zip){
         if (password == null || mail == null || password.length() <8 ) {
             return null;
         }
@@ -48,6 +51,7 @@ public class User extends Model{
         User user = new User();
         user.email = mail;
         user.passwordHash = pwHash;
+        user.zipcode = zip;
 
         if (username != null)
             user.username = username;
