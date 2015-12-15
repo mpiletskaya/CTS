@@ -61,6 +61,8 @@ GET		    /users/:id/edit		controllers.Users.edit(id:Long)
 #update a record about a user
 POST		/users/:id/update		controllers.Users.update(id:Long)
 
+#create a new review
+POST		/reviews	    controllers.Reviews.create(toolId:Long)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
