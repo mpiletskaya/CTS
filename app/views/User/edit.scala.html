@@ -9,7 +9,7 @@
         <!-- left column -->
         <div class="col-md-3">
             <div class="text-center">
-                <img src="@routes.Assets.versioned("images/unknown_avatar.png")" class="avatar img-square" alt="avatar">
+                <img src="@routes.Assets.versioned("images/unknown_avatar.png")" class="avatar img-square img-responsive" alt="avatar">
                 <h6>Upload a different photo...</h6>
 
                 <input type="file" class="form-control">
@@ -19,30 +19,30 @@
         <!-- edit form column -->
         <div class="col-md-9 personal-info">
 
-            <h3>Personal info</h3>
+            <!--<h3>Personal info</h3>-->
 
-            <form class="form-horizontal" role="form">
+            <form class="form-horizontal"  action = "@routes.Users.update(user.id)" method="post" role="form">
                 <div class="form-group">
-                    <label class="col-lg-3 control-label">First name:</label>
-                    <div class="col-lg-8">
-                        <input class="form-control" type="text" name="fname" value="">
+                    <label class="col-md-3 control-label">First name:</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" name="fname" value="@user.fname">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-lg-3 control-label">Last name:</label>
-                    <div class="col-lg-8">
-                        <input class="form-control" type="text" value="" name="lname">
+                    <label class="col-md-3 control-label">Last name:</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" value="@user.lname" name="lname">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-lg-3 control-label">ZipCode:</label>
-                    <div class="col-lg-8">
-                        <input class="form-control" type="text" value="" name="zipcode">
+                    <label class="col-md-3 control-label">ZipCode:</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" value="@user.zipcode" name="zipcode">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-lg-3 control-label">Email:</label>
-                    <div class="col-lg-8">
+                    <label class="col-md-3 control-label">Email:</label>
+                    <div class="col-md-8">
                         <input class="form-control" type="text" value="@user.email" name="email">
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                 <div class="form-group">
                     <label class="col-md-3 control-label"></label>
                     <div class="col-md-8">
-                        <input type="button" class="btn btn-primary" value="Save Changes">
+                        <input type="submit" class="btn btn-primary" value="Save Changes">
                         <span></span>
                         <input type="reset" class="btn btn-default" value="Cancel">
                     </div>
