@@ -1,14 +1,11 @@
 # Routes
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
-
-# Home page
-# GET     /                           controllers.Application.index()
-
 #ToolTypes:
+# Home page
 #~~~~
 #get all tooltypes
-GET         /                   controllers.ToolTypes.index()
+GET         /                       controllers.ToolTypes.index()
 GET    		/tooltypes			    controllers.ToolTypes.index()
 
 #Create a new tooltype
@@ -22,7 +19,6 @@ POST		/tooltypes			    controllers.ToolTypes.create()
 #Tools:
 #~~~~
 #get all tools
-#GET         /                   controllers.Tools.index()
 GET    		/tools			    controllers.Tools.index()
 
 #Create a new tool
@@ -51,7 +47,7 @@ POST        /users/login        controllers.Users.login()
 GET         /users/logout        controllers.Users.logout()
 
 #Delete a user
-GET 	    /users/:id/delete   controllers.Users.delete(id:Long)
+POST	    /users/:id/delete   controllers.Users.delete(id:Long)
 
 #Get user profile
 GET		    /users/:id		    controllers.Users.show(id:Long)

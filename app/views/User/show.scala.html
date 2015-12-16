@@ -1,30 +1,27 @@
 @(user: User)
 
-@main("User profile") {
+@test("User profile") {
 
 <br>
-<!--<div class="container">-->
-<div id = "wrapper_main">
+
+<br>
+<div class="container">
     <div class="row">
-        <!--<div class="col-md-9">-->
-            <div class="panel panel-warning">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-md-12"><h3>My Account</h3></div>
-                    </div>
-
-                </div>
-
+        <div class="col-md-9">
+            <div class="panel panel-default">
                 <div class="panel-body">
-
+                    <div class="row">
+                        <div class="col-md-12 lead">My Account<hr></div>
+                    </div>
                     <div class="row">
                         <div class="col-md-4 text-center">
-                            <img class="img-circle avatar avatar-original" style="-webkit-user-select:none;display:block; margin:auto;" src="@routes.Assets.versioned("images/f_profile.png")" height="150" width="150">
+                            <img class="img-circle avatar avatar-original" style="-webkit-user-select:none;
+              display:block; margin:auto;" src="@routes.Assets.versioned("images/f_profile.png")" height="150" width="150"">
                         </div>
                         <div class="col-md-8">
                             <div class="row">
-                                <div class="col-xs-12 col-sm-4 text-center">
-                                    <h2 class="only-bottom-margin toright">@user.username</h2>
+                                <div class="col-md-12">
+                                    <h1 class="only-bottom-margin">@user.username</h1>
                                 </div>
                             </div>
                             <div class="row">
@@ -32,8 +29,6 @@
                                     <span class="text-muted">Email:</span> @user.email<br>
                                     <span class="text-muted">Registration date:</span> 01.01.2001<br>
                                     <span class="text-muted">ZipCode:</span>@user.zipcode<br><br>
-                                    <!--<small class="text-muted">Created: 01.01.2015</small>-->
-
                                     @if(user.role.equals("admin")){
                                     <a href="@routes.ToolTypes.form()"> Create a Category </a>}
                                 </div>
@@ -56,11 +51,8 @@
                     </div>
                 </div>
             </div>
-        <!--</div>-->
+        </div>
     </div>
 </div>
-
-<!--<p>User role: @user.role</p>-->
-
 
 }

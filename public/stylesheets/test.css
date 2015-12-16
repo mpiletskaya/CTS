@@ -5,7 +5,7 @@ body {
 header,footer{
     margin: auto;
     width: 90%;
-     text-align:center;
+    text-align:center;
 }
 header li{
 	font-size: 20px;

@@ -1,6 +1,53 @@
 @(tool:Tool, reviews: List[Review])
 
 @main("Tool profile") {
+
+<div class="row">
+    <!--<div class="col-md-9">-->
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-md-12"><h3>@tool.name</h3></div>
+            </div>
+
+        </div>
+
+        <div class="panel-body">
+
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <img class="img-circle avatar avatar-original" style="-webkit-user-select:none;display:block; margin:auto;" src="@routes.Assets.versioned("images/Hammer.png")" height="150" width="150">
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-4 text-center">
+                            <h2 class="only-bottom-margin toright">@tool.description</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span class="text-muted">Owner:</span> @tool.owner.username<br>
+                            <span class="text-muted">Registration date:</span> 01.01.2001<br>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <hr><button class="btn btn-default pull-right" onclick = ""><i class="glyphicon glyphicon-pencil"></i> Edit</button>
+                    <button class="btn btn-default pull-right" onclick = ""><i class="glyphicon glyphicon-minus"></i> Delete Profile</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--</div>-->
+</div>
+
+
+
     <h2>Tool: @tool.name</h2>
     <p> Notes from owner:@tool.description</p>
     <p>The owner: @tool.owner.username</p>
