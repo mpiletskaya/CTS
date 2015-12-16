@@ -1,5 +1,6 @@
 package models;
 
+import com.avaje.ebean.Model;
 import play.data.validation.Constraints;
 
 import javax.persistence.Entity;
@@ -11,22 +12,19 @@ import javax.persistence.ManyToOne;
  */
 
 @Entity
-public class Review {
+public class Review extends Model{
     @Id
     public Long id;
-    @Constraints.Required //TODO check import
+    @Constraints.Required
     public String body;
-
     public String timeCreated;
-    public Long tool_id;
-    //TODO  store id or object?
-    @ManyToOne
-    public Long user_id;
-    //vs
+
     @ManyToOne
     public User user;
+    @ManyToOne
+    public Tool tool;
 
-
+    public static Model.Finder<Long, Review> find = new Model.Finder<Long, Review>(Review.class);
 
 
 

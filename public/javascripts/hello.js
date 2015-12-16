@@ -3,14 +3,19 @@ if (window.console) {
 }
 
 function checkPasswordMatch(){
-    var password = $("#pwd1").val();
+    var password = $("#pwd").val();
     var confirmPassword = $("#pwd2").val();
+    var message = document.getElementById('confirmMessage');
+    var btn = document.getElementById('btn')
 
-    if (password != confirmPassword)
-//        $("#divCheckPasswordMatch").html("Passwords do not match!");
-      alert('confirm password not match');
-    else
-     alert('confirm password  match');
-//        $("#divCheckPasswordMatch").html("Passwords match.");
+    if (password != confirmPassword){
+        message.innerHTML ="Passwords do not match!";
+        btn.disabled = true;
+    }else{
+        message.innerHTML ="Passwords match.";
+        btn.disabled = false;
+    }
 }
+
+
 

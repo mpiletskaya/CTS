@@ -6,6 +6,8 @@ import play.data.validation.Constraints;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 /**
  * Created by Maria on 11/8/15.
@@ -24,6 +26,8 @@ public class Tool extends Model {
     public ToolType type;
     @ManyToOne
     public User owner;
+    @OneToMany
+    public List<Review> reviews;
 
     public static Finder<Long, Tool> find = new Finder<Long, Tool>(Tool.class);
 

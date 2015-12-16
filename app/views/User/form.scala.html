@@ -45,8 +45,13 @@
             <div class="form-group">
                 <label for="pwd2">Please confirm your password:</label>
                 <input type="password" class="form-control" id="pwd2" name="pwd2" placeholder="Enter password" required="required" onkeyup="checkPasswordMatch()">
+                <span id="confirmMessage" class="confirmMessage"></span>
             </div>
-            <button type="submit" name="submit" class="btn btn-danger">Sign Up</button>
+            <div class="form-group">
+                <label for="zip">Your zipCode:</label>
+                <input type="zip" class="form-control" id="zip" name="zipcode" placeholder="Enter zipCode" required="required">
+            </div>
+            <button type="submit" name="submit" id = "btn" class="btn btn-danger">Sign Up</button>
             <p class="change_link">
                 Already a member ?
                 <a href="#tologin"> Go and log in </a>

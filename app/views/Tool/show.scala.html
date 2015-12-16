@@ -1,9 +1,42 @@
-@(tool:Tool)
+@(tool:Tool, reviews: List[Review])
 
 @main("Tool profile") {
     <h2>Tool: @tool.name</h2>
     <p> Notes from owner:@tool.description</p>
     <p>The owner: @tool.owner.username</p>
-    <p>The owner role: @tool.owner.role</p>
+    <div class="row" id="post-review-box">
+        <div class="col-md-5">
+            <form accept-charset="UTF-8" action="@routes.Reviews.create(tool.id)" method="post">
 
+                <textarea class="form-control animated" cols="50" id="new-review" name="body" placeholder="Enter your review here..." rows="5"></textarea>
+
+                <div class="text-right">
+                    <div class="stars starrr" data-rating="0"></div>
+                    <a class="btn btn-danger btn-sm" href="#" id="close-review-box" style="display:none; margin-right: 10px;">
+                        <span class="glyphicon glyphicon-remove"></span>Cancel</a>
+                    <button class="btn btn-success btn-lg" type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    @for(r <- reviews){
+        <div class="row">
+            <div class="col-sm-1">
+                <div class="thumbnail">
+                    <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                </div><!-- /thumbnail -->
+            </div><!-- /col-sm-1 -->
+
+            <div class="col-md-5">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <strong>@r.user.username</strong> <span class="text-muted">wrote</span>
+                    </div>
+                    <div class="panel-body">
+                        @r.body
+                    </div><!-- /panel-body -->
+                </div><!-- /panel panel-default -->
+            </div><!-- /col-md-5 -->
+        </div><!-- /row -->
+    }
 }
