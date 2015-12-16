@@ -172,3 +172,37 @@ img.avatar {
     font-size: 24px;
     color: #d17581;
 }
+/*****Tool Page********/
+
+.product-seller__rating span {
+  color: gold;
+  font-size: 18px;
+  padding: 2.5px;
+}
+
+.product-actions,
+.product-seller,
+.product-cta,
+.product-cta .btn {
+  margin-bottom: 12px;
+}
+
+.product-details__title,
+.product-details__price {
+  margin: 0;
+}
+
+.product-details__price {
+  margin-bottom: 15px;
+}
+
+.section {
+  padding: 15px 0;
+}
+
+@media (min-width:1200px) {
+  .container {
+    width: auto;
+    max-width: 1250px;
+  }
+}

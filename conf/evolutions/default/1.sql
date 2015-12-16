@@ -16,7 +16,8 @@ create table tool (
   id                        bigserial not null,
   name                      varchar(255),
   description               varchar(255),
-  type_id                   bigint,
+  status                    varchar(255),
+  t_type_id                 bigint,
   owner_id                  bigint,
   constraint pk_tool primary key (id))
 ;
@@ -47,8 +48,8 @@ alter table review add constraint fk_review_user_1 foreign key (user_id) referen
 create index ix_review_user_1 on review (user_id);
 alter table review add constraint fk_review_tool_2 foreign key (tool_id) references tool (id);
 create index ix_review_tool_2 on review (tool_id);
-alter table tool add constraint fk_tool_type_3 foreign key (type_id) references tool_type (id);
-create index ix_tool_type_3 on tool (type_id);
+alter table tool add constraint fk_tool_tType_3 foreign key (t_type_id) references tool_type (id);
+create index ix_tool_tType_3 on tool (t_type_id);
 alter table tool add constraint fk_tool_owner_4 foreign key (owner_id) references users (id);
 create index ix_tool_owner_4 on tool (owner_id);
 

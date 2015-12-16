@@ -43,7 +43,7 @@ public class Tools extends Controller{
         //TODO handle if user is null
         Tool tool = toolForm.get();
         tool.owner = user;
-        tool.type = t;
+        tool.tType = t;
         tool.save();
         flash("success", "Saved new Tool: " + tool.name);
         //Create a new tool record in the db and redirect

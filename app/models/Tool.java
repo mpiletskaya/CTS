@@ -22,8 +22,9 @@ public class Tool extends Model {
     public String name;
     @Constraints.Required
     public String description;
+    public String status;
     @ManyToOne
-    public ToolType type;
+    public ToolType tType;
     @ManyToOne
     public User owner;
     @OneToMany
