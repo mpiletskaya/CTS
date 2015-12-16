@@ -1,21 +1,45 @@
 @(tooltypes: List[ToolType])
 
-@main("ToolTypes") {
+@test("ToolTypes") {
 
-@if(tooltypes.isEmpty()) {
-    <h2>No other tooltypes available</h2>
-} else {
-    <h2>ToolType List</h2>
-    <button> <a href="@routes.ToolTypes.form()"> Post a new Tooltype</a> </button>
-    <ul>
-        @for(t <- tooltypes) {
-        <li>@t.typeName</li>
-        <img src="@t.typeImageURL" alt="@t.typeName" style="width:304px;height:228px;">
-        }
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-preview">
+                <a href="tools">
+                        @if(tooltypes.isEmpty()) {
+                        <h2>No other tooltypes available</h2>
+                        <button> <a href="@routes.ToolTypes.form()"> Post a new Tooltype</a> </button>
+                        } else {
+                        <h2>ToolType List</h2>
+                        <button> <a href="@routes.ToolTypes.form()"> Post a new Tooltype</a> </button>
+                        <ul>
+                            @for(t <- tooltypes) {
+                            <li>@t.typeName</li>
+                            <img src='@routes.Assets.versioned(t.typeImageURL)' class= "img-responsive" alt="@t.typeName" style="width:100px;height:228px;">
+                            }
+                        </ul>
+                </a>
+                <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p>
+            </div>
+            <hr>
+            <div class="post-preview">
+                <a href="post.html">
+                    <h2 class="post-title">
+                        I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.
+                    </h2>
+                </a>
+                <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 18, 2014</p>
+            <!-- Pager -->
+            <ul class="pager">
+                <li class="next">
+                    <a href="#">Older Posts &rarr;</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 
-    </ul>
 }
-
-
 }
-
