@@ -2,17 +2,23 @@
 
 <p>Hint for testers: if you want to create a category, login as admin and go to 'My Acount'. email: admin"at"test.test, password: admintest </p>
 
-<ul class="nav navbar-nav navbar-right">
+<div class="row">
+    <div>
 
-    <li><a href="@routes.Tools.index()"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-    @if(currentuser != null){
-        <li><a href="@routes.Users.show(currentuser.id)"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
-        <li><a href="@routes.Users.logout()"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
-    }else{
-        <li><a href="@routes.Users.form()#toregister"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="@routes.Users.form()#tologin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    }
-</ul>
+
+    <ul class="nav navbar-nav navbar-right">
+
+        <li><a href="@routes.Tools.index()"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        @if(currentuser != null){
+            <li><a href="@routes.Users.show(currentuser.id)"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+            <li><a href="@routes.Users.logout()"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+        }else{
+            <li><a href="@routes.Users.form()#toregister"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="@routes.Users.form()#tologin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        }
+    </ul>
+    </div>
+</div>
 
 <!--<div class="row">-->
     <!--<div  >-->
@@ -24,6 +30,6 @@
         <!--</div>&lt;!&ndash; /input-group &ndash;&gt;-->
     <!--</div>&lt;!&ndash; /.col-lg-6 &ndash;&gt;-->
 <!--</div>&lt;!&ndash; /.row &ndash;&gt;-->
-<hr>
-<br/>
+
+
 

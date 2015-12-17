@@ -3,43 +3,49 @@
 @test("ToolTypes") {
 
 <!-- Main Content -->
+
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="post-preview">
-                <a href="tools">
-                        @if(tooltypes.isEmpty()) {
-                        <h2>No other tooltypes available</h2>
-                        <button> <a href="@routes.ToolTypes.form()"> Post a new Tooltype</a> </button>
-                        } else {
-                        <h2>ToolType List</h2>
-                        <button> <a href="@routes.ToolTypes.form()"> Post a new Tooltype</a> </button>
-                        <ul>
-                            @for(t <- tooltypes) {
-                            <li>@t.typeName</li>
-                            <img src='@routes.Assets.versioned(t.typeImageURL)' class= "img-responsive" alt="@t.typeName" style="width:100px;height:228px;">
-                            }
-                        </ul>
-                </a>
-                <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p>
+            <div id="panel" class="">
+                <div class="well">
+                    <h2 class="">This is sidebar</h2>
+
+                    <p class="">Lorem ipsum dolor sit amet, ex per delenit legendos suavitate, duo ex
+                        labores expetenda. Malis electram pro ea, eu epicuri honestatis qui, idque
+                        nulla recusabo ut usu. No his dicit pertinax dissentias, has ea labores
+                        blandit, solum semper inimicus at mel. Ne justo quaestio usu. Cu cum quot
+                        dicat bonorum, summo voluptatum qui an.</p>
+                </div>
             </div>
-            <hr>
-            <div class="post-preview">
-                <a href="post.html">
-                    <h2 class="post-title">
-                        I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.
-                    </h2>
-                </a>
-                <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 18, 2014</p>
-            <!-- Pager -->
-            <ul class="pager">
-                <li class="next">
-                    <a href="#">Older Posts &rarr;</a>
+        </div>
+        <div class="col-sm-8 col-md-9">
+            <ul class="thumbnail-list">
+
+
+                @if(tooltypes.isEmpty()) {
+                <h2>No other tooltypes available</h2>
+                } else {
+                <a href="tools">
+                    <h2>ToolType List</h2>
+                    <ul>
+                        @for(t <- tooltypes) {
+                                <li>
+                                <a href="@routes.Tools.index()">
+                                    <img src='@routes.Assets.versioned(t.typeImageURL)' class= "img-responsive" alt="@t.typeName";>
+                                </a>
+                                </li>
+                                }
+                                }
+                        }
+
+
+                    </div>
                 </li>
+
+
+
             </ul>
         </div>
     </div>
 </div>
-
-}
-}
