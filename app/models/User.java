@@ -29,7 +29,7 @@ public class User extends Model{
     @Column(unique=true)
     public String email;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     public List<Tool> postedTools;
     //general user or admin;
     public String role;

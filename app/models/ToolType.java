@@ -3,10 +3,7 @@ package models;
 import com.avaje.ebean.Model;
 import play.data.validation.Constraints;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import java.util.List;
 
 /**
@@ -27,7 +24,7 @@ public class ToolType extends Model {
     public String section;
     public String description;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     public List<Tool> toolList;
 
     @Transient
