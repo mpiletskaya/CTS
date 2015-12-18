@@ -73,7 +73,8 @@ public class Users extends Controller {
     }
     public Result show(Long id){
         User user = User.find.byId(id);
-        List<Tool> tools = new ArrayList<Tool>();
+
+        List<Tool> tools = user.postedTools;
 // Tool.find.where().eq("borrower_id", user.id).findList();
         return ok(views.html.User.show.render(user, tools));
     }

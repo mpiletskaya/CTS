@@ -7,7 +7,7 @@
 <br>
 <div class="container">
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="row">
@@ -33,23 +33,35 @@
                                     <a href="@routes.ToolTypes.form()"> Create a Category </a>}
 
 
-                                    <h2>All Posted Tools</h2>
-                                    <ul>
-                                        @for(tt <- tools){
-                                        <li>Hello</li>
-                                        }
-                                    </ul>
 
-                                    <button> <a href="@routes.Tools.form()"> Post a new Tool</a> </button>
+
+
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="activity-mini">
-                                        <i class="glyphicon glyphicon-comment text-muted"></i> 500
-                                    </div>
-                                    <div class="activity-mini">
-                                        <i class="glyphicon glyphicon-thumbs-up text-muted"></i> 1500
-                                    </div>
+
+                                    @if(tools.isEmpty()){
+                                        <p>You haven't posted any tools yet </p>
+                                        <button class="btn btn-default" onclick = "window.location.href='@routes.Tools.form()'"> Post a Tool</button>
+                                    }else{
+                                        <h1 >Posted Tools</h1>
+                                        @for(t <- tools){
+                                             <span class="text-muted">@t.name </span> Status: @t.status<br>
+                                        }
+                                    }
+                                    <!--<ul>-->
+                                        <!-- -->
+                                        <!--<li></li>-->
+                                        <!-- -->
+                                    <!--</ul>-->
                                 </div>
+                                <!--<div class="col-md-6">-->
+                                    <!--<div class="activity-mini">-->
+                                        <!--<i class="glyphicon glyphicon-comment text-muted"></i> 500-->
+                                    <!--</div>-->
+                                    <!--<div class="activity-mini">-->
+                                        <!--<i class="glyphicon glyphicon-thumbs-up text-muted"></i> 1500-->
+                                    <!--</div>-->
+                                <!--</div>-->
                             </div>
                         </div>
                     </div>

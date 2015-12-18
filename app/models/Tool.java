@@ -20,18 +20,17 @@ public class Tool extends Model {
     @Constraints.Required
     public String description;
     //public String status;
-    public int status;
+    public String status;
 
     @ManyToOne
     public ToolType tType;
 
-    @Constraints.Required
     @ManyToOne
-    @JoinColumn(name="users_fk")
+    @JoinColumn(name="owner_fk")
     public User owner;
 
     @ManyToOne
-    @JoinColumn(name="users_fk")
+    @JoinColumn(name="borrower_fk")
     public User borrower;
 
     @OneToMany(cascade = CascadeType.ALL)

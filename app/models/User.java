@@ -30,12 +30,14 @@ public class User extends Model{
     public String email;
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "owner")
-    @JoinColumn(name = "tool_id", referencedColumnName = "id")
     public List<Tool> postedTools;
+//    @JoinColumn(name = "tool_id", referencedColumnName = "id")
+
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "borrower")
-    @JoinColumn(name = "tool_id", referencedColumnName = "id")
     public List<Tool> borrowedTools;
+//    @JoinColumn(name = "tool_id", referencedColumnName = "id")
+
     //general user or admin;
     public String role;
 

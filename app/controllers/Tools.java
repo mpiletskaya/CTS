@@ -32,7 +32,7 @@ public class Tools extends Controller{
     @Security.Authenticated(UserAuth.class)
     public Result borrow(Long id){
         Tool t = Tool.find.byId(id);
-        t.status = 0;
+        t.status = "requested";
         User owner = t.owner;
         User uBorrower = User.find.byId(Long.parseLong(session("user_id")));
 //        t.borrower = uBorrower;
@@ -54,7 +54,7 @@ public class Tools extends Controller{
         Tool tool = toolForm.get();
         tool.owner = user;
         tool.tType = t;
-        tool.status = 1;
+        tool.status = "available";
         tool.save();
         flash("success", "Saved new Tool: " + tool.name + tool.owner.username);
         //Create a new tool record in the db and redirect
