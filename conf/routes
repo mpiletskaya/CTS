@@ -39,6 +39,12 @@ PUT		    /tools/:id		    controllers.Tools.update(id:Long)
 
 #borrow a tool
 GET       /tools/:id/borrow   controllers.Tools.borrow(id:Long)
+
+#approve a tool
+GET       /tools/:id/approve    controllers.Tools.approve(id:Long)
+
+#return a tool
+GET       /tools/:id/return    controllers.Tools.returned(id:Long)
 #Users
 #~~~~
 #get all users

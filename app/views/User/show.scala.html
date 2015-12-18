@@ -45,7 +45,10 @@
                                     }else{
                                         <h1 >Posted Tools</h1>
                                         @for(t <- pTools){
-                                             <span class="text-muted">@t.name </span> Status: @t.status<br>
+                                             <span class="text-muted">@t.name </span> Status: @t.status
+                                            @if(t.status.equals("requested")){
+                                                <button class="btn btn-default" onclick = "window.location.href='@routes.Tools.approve(t.id)'"> Approve</button>
+                                            } <br>
                                         }
                                     }
 
@@ -56,6 +59,9 @@
                                     <h1 >Borrowed Tools</h1>
                                     @for(b <- bTools){
                                     <span class="text-muted">@b.name </span> Status: @b.status<br>
+                                    @if(b.status.equals("borrowed")){
+                                    <button class="btn btn-default" onclick = "window.location.href='@routes.Tools.returned(b.id)'"> Return</button>
+                                    } <br>
                                     }
                                     }
                                 </div>

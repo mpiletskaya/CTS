@@ -40,6 +40,35 @@ public class Tools extends Controller{
     }
 
     @Security.Authenticated(UserAuth.class)
+    public Result approve(Long id){
+        Tool t = Tool.find.byId(id);
+        Long u_id = Long.parseLong(session("user_id"));
+        if (t.owner.id == u_id) {
+            t.status = "borrowed";
+            t.update();
+            flash("success", "You approved ");
+        }else{
+            flash("error", "Oops!something went wrong. Please, try again later");
+        }
+        return redirect(routes.Users.show(u_id));
+    }
+
+    @Security.Authenticated(UserAuth.class)
+    public Result returned(Long id){
+        Tool t = Tool.find.byId(id);
+        Long u_id = Long.parseLong(session("user_id"));
+        if (t.borrower.id == u_id) {
+            t.status = "available";
+            t.borrower = null;
+            t.update();
+            flash("success", "You returned ");
+        }else{
+            flash("error", "Oops!something went wrong. Please, try again later");
+        }
+        return redirect(routes.Users.show(u_id));
+    }
+
+    @Security.Authenticated(UserAuth.class)
     public Result create(){
         Form<Tool> toolForm = Form.form(Tool.class).bindFromRequest();
         String tooltypeId = toolForm.data().get("tooltype_id");
