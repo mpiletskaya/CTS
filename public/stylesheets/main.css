@@ -33,7 +33,7 @@ h3{
 .brand {
     display: inherit;
     margin: 0;
-    padding: 40px 0 30px;
+    padding: 50px 10px 0px;
     text-align: center;
     text-shadow: 0px 1px 0px rgba(255, 255, 255, .5);
     font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -41,12 +41,16 @@ h3{
     font-weight: 700;
     line-height: normal;
     color: 	#220707;
+
 }
 
+header p{
+ padding: 0px 100px 10px;
+}
 header,footer{
     margin: auto;
     width: 90%;
-    text-align:center;
+
 }
 
 
@@ -218,16 +222,12 @@ img.avatar {
 .thumbnail-list li {
   display:inline-block;
   vertical-align:top;
-  width:100%;
   padding:2%;
   font-size:12px;
 }
 .thumbnail-list img {
-  display:inline-block;
-  vertical-align:top;
-  width:100%;
   padding:10%;
-  max-height: 475px;
+  max-height: 400px;
 }
 
 .btn-slide { display:none; }

@@ -86,7 +86,7 @@ public class Tools extends Controller{
         tool.save();
         flash("success", "Saved new Tool: " + tool.name + tool.owner.username);
         //Create a new tool record in the db and redirect
-        return redirect(routes.Tools.index());
+        return redirect(routes.ToolTypes.show(t.id));
     }
 
     public Result delete(Long id){

@@ -31,12 +31,10 @@ public class User extends Model{
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "owner")
     public List<Tool> postedTools;
-//    @JoinColumn(name = "tool_id", referencedColumnName = "id")
 
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "borrower")
     public List<Tool> borrowedTools;
-//    @JoinColumn(name = "tool_id", referencedColumnName = "id")
 
     //general user or admin;
     public String role;
