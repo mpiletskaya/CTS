@@ -206,3 +206,51 @@ img.avatar {
     max-width: 1250px;
   }
 }
+/*****Copied from Bootply********/
+
+.thumbnail-list {
+  list-style:inline-block;
+  vertical-align:top;
+  margin:0;
+  padding:0;
+  font-size:0;
+}
+.thumbnail-list li {
+  display:inline-block;
+  vertical-align:top;
+  width:100%;
+  padding:2%;
+  font-size:12px;
+}
+.thumbnail-list img {
+  display:inline-block;
+  vertical-align:top;
+  width:100%;
+  padding:10%;
+  max-height: 475px;
+}
+
+.btn-slide { display:none; }
+
+@media (min-width:640px) {
+  .thumbnail-list li { width:30.33333%; }
+}
+
+@media (max-width:100px) {
+  .btn-slide {
+    text-align:center;
+    width:100%;
+    padding:10px;
+    margin:0 auto;
+    display:inline-block;
+    font:bold 120%/100% Arial,Helvetica,sans-serif;
+    color:#000;
+    text-decoration:none;
+    border:1px solid #ccc;
+  }
+  #panel { display:none; }
+  .thumbnail-list li { text-align:center; }
+}
+@media (max-width:320px) {
+  .thumbnail-list li { width: 100%}
+}

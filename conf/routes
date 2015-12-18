@@ -8,6 +8,9 @@
 GET         /                       controllers.ToolTypes.index()
 GET    		/tooltypes			    controllers.ToolTypes.index()
 
+#info on specific tooltype/show
+GET         /tooltypes/:id          controllers.ToolTypes.show(id:Long)
+
 #Create a new tooltype
 GET 		/tooltypes/new		    controllers.ToolTypes.form()
 POST		/tooltypes			    controllers.ToolTypes.create()
