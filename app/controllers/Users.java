@@ -74,9 +74,10 @@ public class Users extends Controller {
     public Result show(Long id){
         User user = User.find.byId(id);
 
-        List<Tool> tools = user.postedTools;
+        List<Tool> pTools = user.postedTools;
+        List<Tool> bTools = user.borrowedTools;
 // Tool.find.where().eq("borrower_id", user.id).findList();
-        return ok(views.html.User.show.render(user, tools));
+        return ok(views.html.User.show.render(user, pTools, bTools));
     }
     public Result edit(Long id){
         // Find user (and let Ebean know its state as an existing row).

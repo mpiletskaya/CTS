@@ -33,9 +33,8 @@ public class Tools extends Controller{
     public Result borrow(Long id){
         Tool t = Tool.find.byId(id);
         t.status = "requested";
-        User owner = t.owner;
         User uBorrower = User.find.byId(Long.parseLong(session("user_id")));
-//        t.borrower = uBorrower;
+        t.borrower = uBorrower;
         t.update();
         return redirect(routes.Tools.show(id));
     }

@@ -1,4 +1,4 @@
-@(user: User, tools: List[Tool])
+@(user: User, pTools: List[Tool], bTools: List[Tool])
 
 @main("User profile") {
 
@@ -39,20 +39,25 @@
                                 </div>
                                 <div class="col-md-6">
 
-                                    @if(tools.isEmpty()){
+                                    @if(pTools.isEmpty()){
                                         <p>You haven't posted any tools yet </p>
                                         <button class="btn btn-default" onclick = "window.location.href='@routes.Tools.form()'"> Post a Tool</button>
                                     }else{
                                         <h1 >Posted Tools</h1>
-                                        @for(t <- tools){
+                                        @for(t <- pTools){
                                              <span class="text-muted">@t.name </span> Status: @t.status<br>
                                         }
                                     }
-                                    <!--<ul>-->
-                                        <!-- -->
-                                        <!--<li></li>-->
-                                        <!-- -->
-                                    <!--</ul>-->
+
+                                    @if(bTools.isEmpty()){
+                                    <p>You haven't borrowed any tools yet </p>
+                                    <button class="btn btn-default" onclick = "window.location.href='@routes.ToolTypes.index()'"> Borrow a Tool</button>
+                                    }else{
+                                    <h1 >Borrowed Tools</h1>
+                                    @for(b <- bTools){
+                                    <span class="text-muted">@b.name </span> Status: @b.status<br>
+                                    }
+                                    }
                                 </div>
                                 <!--<div class="col-md-6">-->
                                     <!--<div class="activity-mini">-->
