@@ -13,6 +13,9 @@ body {
 	letter-spacing: 2px;
 }
 */
+.link{
+text-decoration: underline;
+}
 h2{
 	font-size: 3em;
 }
