@@ -39,7 +39,7 @@ public class Users extends Controller {
         user.save();
         flash("success", "Welcome new user " + user.username);
         session("user_id", user.id.toString());
-        return redirect(routes.Tools.index());
+        return redirect(routes.ToolTypes.index());
     }
 
     public Result login(){
@@ -54,11 +54,11 @@ public class Users extends Controller {
         } else {
             flash("error", "Invalid login. Check your username and password.");
         }
-        return redirect(routes.Tools.create());
+        return redirect(routes.ToolTypes.index());
     }
     public Result logout(){
         session().remove("user_id");
-        return redirect(routes.Tools.index());
+        return redirect(routes.ToolTypes.index());
     }
     public Result delete(Long id){
         User user = User.find.byId(id);
@@ -69,7 +69,7 @@ public class Users extends Controller {
         }else{
             flash("Error", "Sorry, something went wrong.Please, try again later");
         }
-        return redirect(routes.Tools.index());
+        return redirect(routes.ToolTypes.index());
     }
     public Result show(Long id){
         User user = User.find.byId(id);
