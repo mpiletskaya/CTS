@@ -1,4 +1,4 @@
-@(tool:Tool, reviews: List[Review])
+@(tool:Tool, reviews: List[Review],user:User)
 
 @main("Tool profile") {
 
@@ -7,10 +7,7 @@
     <div class="container">
         <div class="col-sm-8 col-sm-offset-1 col-lg-3 col-lg-offset-0">
             <!-- //// Image Viewer Module \\\\ -->
-            <!--<div class="iv clearfix">-->
-                <!--<div class="iv-main pxs">-->
-                    <!--<img src="@routes.Assets.versioned("images/Hammer.png")" class="img-responsive">-->
-                <!--</div>-->
+
                 <a class="iv-thumbnail col-xs-6" href="#">
                     <img src="@routes.Assets.versioned(tool.tType.typeImageURL)" class="img-responsive">
                 </a>
@@ -21,10 +18,10 @@
             <!-- //// Product Details Module \\\\ -->
             <div class="product-details">
                 <h1 class="product-details__title">@tool.name </h1>
-                <h2 class="h1 text-danger product-details__price">@tool.status</h2>
+                <h3 class="text-danger product-details__price margin-right">@tool.status</h3>
 
-                <h3 class="h4 product-details__heading">Tool Description:</h3>
-                <p class="product-details__desc">@tool.description</p>
+                <h3 class="product-details__heading">Tool Description:</h3>
+                <p class="product-details__desc margin-right-only">@tool.description</p>
                 <div class="row product-params">
                     <div class="col-xs-4">
                         <h4 class="product-params__key">Category</h4>
@@ -79,7 +76,7 @@
     </div>
 </section>
 
-
+@if(user!=null && tool.owner == user){
 <div class="row">
 
 
@@ -91,7 +88,8 @@
             </div>
 
 </div>
-
+}
+<br/>
     <div class="row" id="post-review-box">
         <div class="col-md-5">
             <form accept-charset="UTF-8" action="@routes.Reviews.create(tool.id)" method="post">

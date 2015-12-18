@@ -90,17 +90,29 @@ public class Tools extends Controller{
     }
 
     public Result delete(Long id){
-        return ok(views.html.index.render("Delete a tool and redirect"));
+       Tool t = Tool.find.byId(id);
+        if (t!=null){
+            t.delete();
+            flash("success!");
+        }else{
+            flash("Error", "Sorry, something went wrong.Please, try again later");
+        }
+        return redirect(routes.ToolTypes.index());
     }
     public Result show(Long id){
         List<Review> reviews;
+        User user=null;
         Tool t = Tool.find.byId(id);
+        try {
+           user = User.find.byId(Long.parseLong(session("user_id")));
+        }catch (Exception e){
+        };
         if (t.reviews!= null) {
             reviews = t.reviews;
         }else{
             reviews = new ArrayList<Review>();;
         }
-        return ok(views.html.Tool.show.render(t,reviews));
+        return ok(views.html.Tool.show.render(t,reviews, user));
     }
     public Result edit(Long id){
         return ok(views.html.index.render("Edit a tool"));

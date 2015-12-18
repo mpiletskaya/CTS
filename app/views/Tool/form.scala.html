@@ -2,15 +2,18 @@
 
 @main("Post a new Tool") {
 <!--add pic,-->
+
+    <h1>Post a Tool:</h1><br/><br/>
     <form action="@routes.Tools.create()" method="post">
-        <label for="name">Tool:</label>
+        <label for="name">Tool title:</label>
                 <input type="text" name="name">
                 <br/><br/>
         <label for="description">Describe your tool:</label>
-                <input type="text" name="description">
+        <textarea class="form-control" cols="50" id="new-review" name="description" placeholder="Enter your description or any other notes here..." rows="5"></textarea>
+                <!--<input type="text" name="description">-->
                 <br/><br/>
 
-        <label for="tooltype_id">Choose an appropriate tooltype</label>
+        <label for="tooltype_id">Choose an appropriate category: </label>
         <select name="tooltype_id" id = "type">
                 @for(t <- toolTypes){
                     <option value="@t.id">@t.typeName</option>
@@ -19,6 +22,6 @@
             <br><br>
 
 
-        <button class="btn btn-success">Submit</button>
+        <button class="btn btn-default center">Submit</button>
     </form>
 }
