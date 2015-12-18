@@ -20,6 +20,8 @@ public class Tool extends Model {
     @Constraints.Required
     public String description;
     public String status;
+    public String chy;
+    public String ch;
     @ManyToOne
     public ToolType tType;
     @ManyToOne

@@ -17,6 +17,8 @@ create table tool (
   name                      varchar(255),
   description               varchar(255),
   status                    varchar(255),
+  chy                       varchar(255),
+  ch                        varchar(255),
   t_type_id                 bigint,
   owner_id                  bigint,
   constraint pk_tool primary key (id))
