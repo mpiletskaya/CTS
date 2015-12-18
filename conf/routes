@@ -1,10 +1,9 @@
 # Routes
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
-#ToolTypes:
-# Home page
+#ToolTypes
 #~~~~
-#get all tooltypes
+#Home Page and get all tooltypes
 GET         /                       controllers.ToolTypes.index()
 GET    		/tooltypes			    controllers.ToolTypes.index()
 

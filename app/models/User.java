@@ -29,8 +29,13 @@ public class User extends Model{
     @Column(unique=true)
     public String email;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "owner")
+    @JoinColumn(name = "tool_id", referencedColumnName = "id")
     public List<Tool> postedTools;
+
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "borrower")
+    @JoinColumn(name = "tool_id", referencedColumnName = "id")
+    public List<Tool> borrowedTools;
     //general user or admin;
     public String role;
 

@@ -1,4 +1,4 @@
-@(user: User)
+@(user: User, tools: List[Tool])
 
 @main("User profile") {
 
@@ -31,6 +31,16 @@
                                     <span class="text-muted">ZipCode:</span>@user.zipcode<br><br>
                                     @if(user.role.equals("admin")){
                                     <a href="@routes.ToolTypes.form()"> Create a Category </a>}
+
+
+                                    <h2>All Posted Tools</h2>
+                                    <ul>
+                                        @for(tt <- tools){
+                                        <li>Hello</li>
+                                        }
+                                    </ul>
+
+                                    <button> <a href="@routes.Tools.form()"> Post a new Tool</a> </button>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="activity-mini">

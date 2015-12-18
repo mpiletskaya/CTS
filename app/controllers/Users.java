@@ -1,10 +1,15 @@
 package controllers;
 
+import models.Review;
+import models.Tool;
 import models.User;
 import play.data.DynamicForm;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Maria on 11/10/15.
@@ -68,7 +73,9 @@ public class Users extends Controller {
     }
     public Result show(Long id){
         User user = User.find.byId(id);
-        return ok(views.html.User.show.render(user));
+        List<Tool> tools = new ArrayList<Tool>();
+// Tool.find.where().eq("borrower_id", user.id).findList();
+        return ok(views.html.User.show.render(user, tools));
     }
     public Result edit(Long id){
         // Find user (and let Ebean know its state as an existing row).

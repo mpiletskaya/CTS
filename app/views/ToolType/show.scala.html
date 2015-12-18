@@ -5,12 +5,12 @@
 <h1>ToolType: @tooltype.typeName</h1>
 
 @if(tools.isEmpty()){
-<h2>No tools available in this tooltype</h2>
+    <h2>No tools available in this tooltype</h2>
 } else {
-<h2>Tool list for ToolType: @tooltype.typeName</h2>
+    <h2>Tool list for ToolType: @tooltype.typeName</h2>
 <u1>
     @for(t <- tools) {
-    <li>@t.name</li>
+        <li>@t.name</li>
     }
 </u1>
 }

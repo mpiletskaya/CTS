@@ -30,9 +30,19 @@ public class Tools extends Controller{
     }
 
     @Security.Authenticated(UserAuth.class)
+    public Result borrow(Long id){
+        Tool t = Tool.find.byId(id);
+        t.status = 0;
+        User owner = t.owner;
+        User uBorrower = User.find.byId(Long.parseLong(session("user_id")));
+//        t.borrower = uBorrower;
+        t.update();
+        return redirect(routes.Tools.show(id));
+    }
+
+    @Security.Authenticated(UserAuth.class)
     public Result create(){
         Form<Tool> toolForm = Form.form(Tool.class).bindFromRequest();
-
         String tooltypeId = toolForm.data().get("tooltype_id");
         ToolType t = ToolType.find.byId(Long.parseLong(tooltypeId));
         if(t == null) {
@@ -44,8 +54,9 @@ public class Tools extends Controller{
         Tool tool = toolForm.get();
         tool.owner = user;
         tool.tType = t;
+        tool.status = 1;
         tool.save();
-        flash("success", "Saved new Tool: " + tool.name);
+        flash("success", "Saved new Tool: " + tool.name + tool.owner.username);
         //Create a new tool record in the db and redirect
         return redirect(routes.Tools.index());
     }

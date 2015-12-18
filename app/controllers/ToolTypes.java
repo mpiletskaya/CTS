@@ -55,6 +55,17 @@ public class ToolTypes extends Controller {
             //Create a new tool record in the db and redirect
             return redirect(routes.ToolTypes.index());
     }
+
+    public Result delete(Long id){
+        ToolType type = ToolType.find.byId(id);
+        if (type!=null){
+            type.delete();
+            flash("success!");
+        }else{
+            flash("Error", "Sorry, something went wrong.Please, try again later");
+        }
+        return redirect(routes.ToolTypes.index());
+    }
 }
 
 
