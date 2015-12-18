@@ -23,6 +23,7 @@ public class Tool extends Model {
     public String status;
 
     @ManyToOne
+    @JoinColumn(name="ttype_fk")
     public ToolType tType;
 
     @ManyToOne

@@ -10,7 +10,8 @@
     <h2>Tool list for ToolType: @tooltype.typeName</h2>
 <u1>
     @for(t <- tools) {
-        <li>@t.name</li>
+    <li><a href = "@routes.Tools.show(t.id)">@t.name</a></li>
+
     }
 </u1>
 }

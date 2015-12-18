@@ -24,7 +24,7 @@ public class ToolType extends Model {
     public String section;
     public String description;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "tType")
     public List<Tool> toolList;
 
     @Transient
