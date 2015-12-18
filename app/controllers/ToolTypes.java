@@ -46,6 +46,7 @@ public class ToolTypes extends Controller {
         if (user.role.equals("admin")) {
             //TODO handle if user is null
             ToolType type = typeForm.get();
+
             type.save();
             flash("success", "Saved new Tool Category: " + type.typeName);
         }else{
