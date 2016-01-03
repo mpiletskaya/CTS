@@ -1,23 +1,19 @@
 @(tooltype: ToolType, tools: List[Tool])
 
 @main("ToolTypes") {
-
-@if(tools.isEmpty()){
-    <h1>Unfortunately, no tools available in this category</h1>
-} else {
-    <h1>@tooltype.typeName List:</h1><br/>
-<div class="col-md-4 text-center">
-    <img class="img-circle avatar avatar-original" style="-webkit-user-select:none;
-              display:block; margin:auto;" src="@routes.Assets.versioned(tooltype.typeImageURL)" height="200" width="200">
-<br/><br/>
-</div>
-<u1>
-    @for(t <- tools) {
-    <li><h4><a class = "link" href = "@routes.Tools.show(t.id)">@t.name</a> </h4> Status: @t.status . Owner lives at zipcode: @t.owner.zipcode</li>
-
+    @if(tools.isEmpty()){
+        <h1>Unfortunately, no tools available in this category</h1>
+    } else {
+        <h1>@tooltype.typeName List:</h1><br/>
+        <div class="col-md-4 text-center">
+            <img class="img-circle avatar avatar-original" style="-webkit-user-select:none;
+                  display:block; margin:auto;" src="@routes.Assets.versioned(tooltype.typeImageURL)" height="200" width="200">
+            <br/><br/>
+        </div>
+        <u1>
+            @for(t <- tools) {
+                <li><h4><a class = "link" href = "@routes.Tools.show(t.id)">@t.name</a> </h4> Status: @t.status . Owner lives at zipcode: @t.owner.zipcode</li>
+            }
+        </u1>
     }
-</u1>
-
-
-}
 }

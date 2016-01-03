@@ -1,16 +1,14 @@
 @(toolTypes: List[ToolType])
 
 @main("Post a new Tool") {
-<!--add pic,-->
-
     <h1>Post a Tool:</h1><br/><br/>
     <form action="@routes.Tools.create()" method="post">
         <label for="name">Tool title:</label>
                 <input type="text" name="name">
                 <br/><br/>
+
         <label for="description">Describe your tool:</label>
-        <textarea class="form-control" cols="50" id="new-review" name="description" placeholder="Enter your description or any other notes here..." rows="5"></textarea>
-                <!--<input type="text" name="description">-->
+        <textarea class="form-control" cols="50" name="description" placeholder="Enter your description or any other notes here..." rows="5"></textarea>
                 <br/><br/>
 
         <label for="tooltype_id">Choose an appropriate category: </label>
@@ -20,7 +18,6 @@
                 }
         </select>
             <br><br>
-
 
         <button class="btn btn-default center">Submit</button>
     </form>
