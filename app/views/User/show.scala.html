@@ -31,11 +31,6 @@
                                     <span class="text-muted">ZipCode:</span>@user.zipcode<br><br>
                                     @if(user.role.equals("admin")){
                                     <a href="@routes.ToolTypes.form()"> Create a Category </a>}
-
-
-
-
-
                                 </div>
                                 <div class="col-md-6">
 
@@ -53,26 +48,18 @@
                                     }
 
                                     @if(bTools.isEmpty()){
-                                    <p>You haven't borrowed any tools yet </p>
-                                    <button class="btn btn-default" onclick = "window.location.href='@routes.ToolTypes.index()'"> Borrow a Tool</button>
+                                        <p>You haven't borrowed any tools yet </p>
+                                        <button class="btn btn-default" onclick = "window.location.href='@routes.ToolTypes.index()'"> Borrow a Tool</button>
                                     }else{
-                                    <h1 >Borrowed Tools</h1>
-                                    @for(b <- bTools){
-                                    <span class="text-muted">@b.name </span> Status: @b.status<br>
-                                    @if(b.status.equals("borrowed")){
-                                    <button class="btn btn-default" onclick = "window.location.href='@routes.Tools.returned(b.id)'"> Return</button>
-                                    } <br>
-                                    }
+                                        <h1 >Borrowed Tools</h1>
+                                        @for(b <- bTools){
+                                            <span class="text-muted">@b.name </span> Status: @b.status<br>
+                                            @if(b.status.equals("borrowed")){
+                                                <button class="btn btn-default" onclick = "window.location.href='@routes.Tools.returned(b.id)'"> Return</button>
+                                            } <br>
+                                        }
                                     }
                                 </div>
-                                <!--<div class="col-md-6">-->
-                                    <!--<div class="activity-mini">-->
-                                        <!--<i class="glyphicon glyphicon-comment text-muted"></i> 500-->
-                                    <!--</div>-->
-                                    <!--<div class="activity-mini">-->
-                                        <!--<i class="glyphicon glyphicon-thumbs-up text-muted"></i> 1500-->
-                                    <!--</div>-->
-                                <!--</div>-->
                             </div>
                         </div>
                     </div>
