@@ -15,35 +15,35 @@
             <!--</div>-->
         </div>
         <div class="col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-0">
-            <!-- //// Product Details Module \\\\ -->
-            <div class="product-details">
-                <h1 class="product-details__title">@tool.name </h1>
-                <h3 class="text-danger product-details__price margin-right">@tool.status</h3>
+            <!-- //// Tool Details Module \\\\ -->
+            <div class="tool-details">
+                <h1 class="tool-details__title">@tool.name </h1>
+                <h3 class="text-danger tool-details__status margin-right">@tool.status</h3>
 
-                <h3 class="product-details__heading">Tool Description:</h3>
-                <p class="product-details__desc margin-right-only">@tool.description</p>
-                <div class="row product-params">
+                <h3 class="tool-details__heading">Tool Description:</h3>
+                <p class="tool-details__desc margin-right-only">@tool.description</p>
+                <div class="row">
                     <div class="col-xs-4">
-                        <h4 class="product-params__key">Category</h4>
-                        <label class="product-params__value">@tool.tType.typeName</label>
+                        <h4>Category</h4>
+                        <label>@tool.tType.typeName</label>
                     </div>
                     <div class="col-xs-4">
-                        <h4 class="product-params__key">Section</h4>
-                        <label class="product-params__value">@tool.tType.section</label>
+                        <h4 >Section</h4>
+                        <label>@tool.tType.section</label>
                     </div>
                     <div class="col-xs-4">
-                        <h4 class="product-params__key">ZipCode</h4>
-                        <label class="product-params__value">@tool.owner.zipcode</label>
+                        <h4 >ZipCode</h4>
+                        <label >@tool.owner.zipcode</label>
                     </div>
                 </div>
             </div>
             <hr>
             <!-- //// Product Action Module \\\\ -->
-            <div class="product-actions  clearfix">
+            <div class="tool-actions  clearfix">
                 <div class="row">
                     <div class="col-xs-12 col-sm-7 col-sm-push-5">
-                        <div class="product-cta  clearfix">
-                            <!-- //// Product CTA Component \\\\ -->
+                        <div class="tool-cta  clearfix">
+                            <!-- //// Tool CTA Component \\\\ -->
                             <div class="row">
                                 <div class="col-xs-12 col-sm-6 col-sm-push-6">
                                     <button class="btn btn-danger btn-block " role="button" onclick="window.location.href='@routes.Tools.borrow(tool.id)'">Borrow</button>
@@ -55,17 +55,16 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-5 col-sm-pull-7">
-                        <!-- //// Product Seller Component \\\\ -->
-                        <div class="product-seller">
+                        <!-- //// Tool Owner Component \\\\ -->
+                        <div class="tool-owner">
                             <div class="media">
-                                <div class="media-left  product-seller__pic">
+                                <div class="media-left  tool-owner__pic">
                                     <a href="user.profile.public">
                                         <img class="media-object img-circle" src="@routes.Assets.versioned("images/profile_pic.png")" alt="Username" width="90" height="90">
                                     </a>
                                 </div>
                                 <div class="media-body">
-                                    <h4 class="media-heading  product-seller__name"><a href="@routes.Users.show(tool.owner.id)"></a>@tool.owner.username</h4>
-                                    <!--<div class="product-seller__rating"><span>★</span><span>★</span><span>★</span><span>★</span></div>-->
+                                    <h4 class="media-heading  tool-owner__name"><a href="@routes.Users.show(tool.owner.id)"></a>@tool.owner.username</h4>
                                 </div>
                             </div>
                         </div>
