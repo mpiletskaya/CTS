@@ -18,8 +18,6 @@ public class ToolTypes extends Controller {
      // List all of the ToolType
      public Result index() {
         List<ToolType> tooltypes = ToolType.find.all();
-        //TODO you don't have tooltypes folder in your views folder
-        //return ok(views.html.tooltypes.index.render(tooltypes));
          return ok(views.html.ToolType.index.render(tooltypes));
      }
      
@@ -30,7 +28,6 @@ public class ToolTypes extends Controller {
         } else {
             List <Tool> tools = Tooltype.toolList;
             return ok(views.html.ToolType.show.render(Tooltype,tools));
-           // return ok(views.html.tooltypes.show.render(Tooltype, tools));
         }
     }
 
