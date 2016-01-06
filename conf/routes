@@ -28,7 +28,7 @@ GET 		/tools/new		    controllers.Tools.form()
 POST		/tools			    controllers.Tools.create()
 
 #Delete a tool
-DELETE 	    /tools/:id		    controllers.Tools.delete(id:Long)
+POST 	    /tools/:id/delete   controllers.Tools.delete(id:Long)
 
 #Get all info about specific tool/show
 GET		    /tools/:id		    controllers.Tools.show(id:Long)
